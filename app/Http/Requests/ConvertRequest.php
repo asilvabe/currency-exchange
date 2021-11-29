@@ -2,16 +2,12 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class ConvertCurrencyRequest extends FormRequest
+class ConvertRequest extends FormRequest
 {
-    protected bool $forceJsonResponse = true;
-
     public function authorize(): bool
     {
         return true;
@@ -48,13 +44,5 @@ class ConvertCurrencyRequest extends FormRequest
             '*.required' => 'Missing \':attribute\' currency.',
             '*.in' => 'Currency \':input\' not supported.',
         ];
-    }
-
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response()->json([
-            'success' => false,
-            'errors' => $validator->errors(),
-        ], 422));
     }
 }

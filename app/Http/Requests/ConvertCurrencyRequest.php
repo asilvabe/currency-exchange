@@ -17,19 +17,12 @@ class ConvertCurrencyRequest extends FormRequest
         return true;
     }
 
-    public function validationData(): array
+    protected function prepareForValidation(): void
     {
-        $all = parent::validationData();
-
-        if (array_key_exists('from', $all)) {
-            $all['from'] = Str::upper($all['from']);
-        }
-
-        if (array_key_exists('to', $all)) { 
-            $all['to'] = Str::upper($all['to']);
-        }
-
-        return $all;
+        $this->merge([
+            'from' => Str::upper($this->from),
+            'to' => Str::upper($this->to),
+        ]);
     }
 
     public function rules(): array

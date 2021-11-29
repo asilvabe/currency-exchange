@@ -83,7 +83,7 @@ To use this endpoint, simply specify a from currency code, a to Currency Code, a
 **Example API request**
 
 ```
-https://currency.asilvabe.dev/convert
+https://currency.asilvabe.dev/api/convert
     ? from = USD
     & to = COP
     & amount = 10

@@ -7,9 +7,6 @@
 
   <p align="center">
     Currency Converter App
-    <br />
-    <br />
-    <a href="https://currency.asilvabe.dev">Live Demo</a>
   </p>
 </p>
 
@@ -70,7 +67,7 @@ npm install & npm run dev
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The project has a web form that can be used to convert between currencies. You can use a live demo at [https://currency.asilvabe.dev](https://currency.asilvabe.dev)  
+The project has a web form that can be used to convert between currencies.  
 
 Likewise, the project exposes a simple API that allows conversions through HTTP requests with a client such as Postman.
 
